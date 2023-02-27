@@ -121,3 +121,11 @@ body {
  .fileUpload{
   margin: 5px;
  }
+ 
+ .emscripten{
+	background-color: #f2f2f2;
+	height: 100%;
+	opacity: 0.4;
+	position: fixed;
+	width: 100%;
+ }
