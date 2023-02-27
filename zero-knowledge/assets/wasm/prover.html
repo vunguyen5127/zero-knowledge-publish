@@ -8,10 +8,10 @@
   <body>
     <div class="spinner" id='spinner' style="display: none;"></div>
     <div class="emscripten" id="status" style="display: none;">Downloading...</div>
-    <div class="emscripten">
+    <div class="emscripten" id="divProgress">
       <progress value="0" max="100" id="progress" hidden=1></progress>
     </div>
-    <div>
+    <div id="content">
       <table>
         <tr>
           <td class="zk_td_custom">ZK statement (WASM file):</td>
@@ -41,6 +41,7 @@
       var statusElement = document.getElementById('status');
       var progressElement = document.getElementById('progress');
       var spinnerElement = document.getElementById('spinner');
+	  var divProgressElement = document.getElementById('divProgress');
 
       var Module = {
         preRun: [],
@@ -86,12 +87,14 @@
             progressElement.value = parseInt(m[2])*100;
             progressElement.max = parseInt(m[4])*100;
             progressElement.hidden = false;
-            spinnerElement.hidden = false;
+            //spinnerElement.hidden = false;
+			divProgressElement.hidden = false;
           } else {
             progressElement.value = null;
             progressElement.max = null;
             progressElement.hidden = true;
-            if (!text) spinnerElement.style.display = 'none';
+			divProgressElement.hidden = false;
+            //if (!text) spinnerElement.style.display = 'none';
           }
           statusElement.innerHTML = text;
         },
