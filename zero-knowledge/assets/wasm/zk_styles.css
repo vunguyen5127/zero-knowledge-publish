@@ -54,7 +54,7 @@ body {
 
   #progress {
     height: 20px;
-    width: 90%;
+    width: 99%;
   }
 
   #controls {
@@ -123,9 +123,9 @@ body {
  }
  
  .emscripten{
-	background-color: #f2f2f2;
+	background-color: transparent;
 	height: 100%;
-	opacity: 0.4;
+	opacity: 0.8;
 	position: fixed;
 	width: 100%;
  }
